@@ -3,10 +3,11 @@ pragma experimental ABIEncoderV2;
 pragma solidity ^0.5.0;
 
 /* t0d0:
-  [ ] swap USDC to WETH on Uni
-  [ ] swap WETH to USDT on Uni
-  [ ] swap USDT to USDC on Curve
-  [ ] repay the loan to dYdX
+  [x] swap USDC to WETH on Uni
+  [x] swap WETH to USDT on Uni
+  [x] swap USDT to USDC on Curve
+  [x] repay the loan to dYdX
+  [ ] send USDC/profit to user (!h0m3w0rk)
 */
 import "@studydefi/money-legos/dydx/contracts/DydxFlashloanBase.sol";
 import "@studydefi/money-legos/curvefi/contracts/ICurveFiCurve.sol";
@@ -53,8 +54,6 @@ contract Arb is ICallee, DydxFlashloanBase {
     require(msg.sender == owner, "caller is not the owner!");
     _;
   }
-
-  event usdcBalanceHistory(uint balanceBefore, uint balanceAfter);
 
   constructor () public {
     owner = msg.sender;
@@ -111,5 +110,6 @@ contract Arb is ICallee, DydxFlashloanBase {
     curve.exchange_underlying(usdtIndex, usdcIndex, usdtBalanceBefore, 1);
 
     //repay the loan to dYdX
+    /*!h0m3w0rk: send USDC back to the user */
   }
 }

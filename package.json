@@ -1,13 +1,8 @@
 {
   "name": "defi_arb",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
+  "description": "Recreating ~$42k profit arbitrage transaction between USDC/USDT on Uniswap",
+  "author": "https://github.com/xternet",
   "license": "ISC",
   "dependencies": {
     "@studydefi/money-legos": "^2.4.2",
