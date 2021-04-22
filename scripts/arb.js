@@ -25,6 +25,7 @@ try {
 
   //!Note: this is easy calc. implementation, we assume that usdc&usdt equals exactly $1(also we ignore fees)
   //The result will be ~453k, whereas in true arbitrage was ~450k
+
   //calc. how much USDC to borrow and swap for ETH to bring avgPrice
   const avgPrice = (usdtEth + usdcEth) / 2
   const percentage = (1 - usdcEth / avgPrice) / 2 //div. by 2, cuz in the same time eth will be taken
