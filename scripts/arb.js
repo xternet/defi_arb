@@ -23,8 +23,10 @@ try {
   const usdtEthReserve = Number(ethUsdtReserves[0])
   const usdtEth = usdtReserve * 1e12 / usdtEthReserve //mul. by 1e12, cuz USDT has 6 decimals
 
-  //!Note: this is easy calc. implementation, we assume that usdc&usdt equals exactly $1(also we ignore fees)
-  //The result will be ~453k, whereas in true arbitrage was ~450k
+  //!Note: This calc. arb method is not correct.
+  //Just to make not precisely work for this particular example.
+  //We assume that usdc&usdt equals exactly $1 also we ignore fees.
+  //The result will be ~453k, whereas in true arbitrage was ~450k.
 
   //calc. how much USDC to borrow and swap for ETH to bring avgPrice
   const avgPrice = (usdtEth + usdcEth) / 2
